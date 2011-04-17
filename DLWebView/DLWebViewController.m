@@ -10,7 +10,7 @@
 
 @implementation DLWebViewController
 
-@synthesize webView, back, forward, titleLabel, urlField, edit, currentUrl, urlFieldVisible;
+@synthesize webView, refresh, back, forward, titleLabel, urlField, edit, currentUrl, urlFieldVisible;
 
 - (void)load:(NSURL*)url {
     [self.webView loadRequest:[NSURLRequest requestWithURL:url]];
@@ -31,6 +31,11 @@
 }
 
 #pragma mark - Button handling
+
+- (IBAction)refresh:(id)sender {
+    [self.webView stopLoading]; 
+    [self load:[NSURL URLWithString:self.currentUrl]];
+}
 
 - (IBAction)back:(id)sender {
     [self.webView goBack]; 
@@ -131,14 +136,16 @@
 #pragma mark - View lifecycle
 
 - (void)positionPortrait {
-    self.back.frame = CGRectMake(28, 4.0, self.back.frame.size.width, self.back.frame.size.height);
+    self.refresh.frame = CGRectMake(6, 12.0, self.refresh.frame.size.width, self.refresh.frame.size.height);
+    self.back.frame = CGRectMake(30, 4.0, self.back.frame.size.width, self.back.frame.size.height);
     self.forward.frame = CGRectMake(67, 4.0, self.forward.frame.size.width, self.forward.frame.size.height);
     self.titleLabel.frame = CGRectMake(100, 10.0, self.titleLabel.frame.size.width, self.titleLabel.frame.size.height);
     self.urlField.frame = CGRectMake(-260, 6.0, self.urlField.frame.size.width, self.urlField.frame.size.height);
 }
 
 - (void)positionLandscape {
-    self.back.frame = CGRectMake(28, -2.0, self.back.frame.size.width, self.back.frame.size.height);
+    self.refresh.frame = CGRectMake(6, 5.0, self.refresh.frame.size.width, self.refresh.frame.size.height);
+    self.back.frame = CGRectMake(30, -2.0, self.back.frame.size.width, self.back.frame.size.height);
     self.forward.frame = CGRectMake(67, -2.0, self.forward.frame.size.width, self.forward.frame.size.height);
     self.titleLabel.frame = CGRectMake(100, 5.0, self.titleLabel.frame.size.width, self.titleLabel.frame.size.height);
     self.urlField.frame = CGRectMake(-260, 0.0, self.urlField.frame.size.width, self.urlField.frame.size.height);    
@@ -146,6 +153,7 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    [[self.navigationController navigationBar] addSubview:self.refresh];
     [[self.navigationController navigationBar] addSubview:self.back];
     [[self.navigationController navigationBar] addSubview:self.forward];
     [[self.navigationController navigationBar] addSubview:self.titleLabel];
@@ -157,6 +165,7 @@
 - (void)viewWillDisappear:(BOOL)animated {
     [self.webView stopLoading];
     [self.webView removeFromSuperview];
+    [self.refresh removeFromSuperview];
     [self.back removeFromSuperview];
     [self.forward removeFromSuperview];
     [self.urlField removeFromSuperview];
@@ -171,6 +180,12 @@
     self.webView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleBottomMargin;
     self.webView.dataDetectorTypes = UIDataDetectorTypeAll;
     self.webView.delegate = self;
+    
+    self.refresh = [UIButton buttonWithType:UIButtonTypeCustom];
+    self.refresh.contentMode = UIViewContentModeScaleAspectFit;
+    self.refresh.frame = CGRectMake(0, 0, 20, 22);
+    [self.refresh setImage:[UIImage imageNamed:@"refresh"] forState:UIControlStateNormal];
+    [self.refresh addTarget:self action:@selector(refresh:) forControlEvents:UIControlEventTouchUpInside];
     
     self.back = [UIButton buttonWithType:UIButtonTypeCustom];
     self.back.frame = CGRectMake(0, 0, 30, 36);
@@ -206,6 +221,7 @@
 - (void)viewDidUnload {
     [super viewDidUnload];
     self.webView = nil;
+    self.refresh = nil;
     self.back = nil;
     self.forward = nil;
     self.titleLabel = nil;
@@ -240,6 +256,7 @@
 
 - (void)dealloc {
     [webView release];
+    [refresh release];
     [back release];
     [forward release];
     [titleLabel release];

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B6016A35135B3CF10086BF84 /* refresh.png in Resources */ = {isa = PBXBuildFile; fileRef = B6016A33135B3CF10086BF84 /* refresh.png */; };
+		B6016A36135B3CF10086BF84 /* refresh@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B6016A34135B3CF10086BF84 /* refresh@2x.png */; };
 		B60FF43B1355C8A100B3A3D8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B60FF43A1355C8A100B3A3D8 /* UIKit.framework */; };
 		B60FF43D1355C8A100B3A3D8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B60FF43C1355C8A100B3A3D8 /* Foundation.framework */; };
 		B60FF43F1355C8A100B3A3D8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B60FF43E1355C8A100B3A3D8 /* CoreGraphics.framework */; };
@@ -22,6 +24,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B6016A33135B3CF10086BF84 /* refresh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = refresh.png; sourceTree = "<group>"; };
+		B6016A34135B3CF10086BF84 /* refresh@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "refresh@2x.png"; sourceTree = "<group>"; };
 		B60FF4361355C8A100B3A3D8 /* DLWebView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DLWebView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B60FF43A1355C8A100B3A3D8 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B60FF43C1355C8A100B3A3D8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -85,6 +89,8 @@
 		B60FF4401355C8A100B3A3D8 /* DLWebView */ = {
 			isa = PBXGroup;
 			children = (
+				B6016A33135B3CF10086BF84 /* refresh.png */,
+				B6016A34135B3CF10086BF84 /* refresh@2x.png */,
 				B60FF45D1355CB8F00B3A3D8 /* forward@2x.png */,
 				B60FF45E1355CB8F00B3A3D8 /* forward.png */,
 				B60FF45F1355CB9000B3A3D8 /* back@2x.png */,
@@ -166,6 +172,8 @@
 				B60FF4621355CB9000B3A3D8 /* forward.png in Resources */,
 				B60FF4631355CB9000B3A3D8 /* back@2x.png in Resources */,
 				B60FF4641355CB9000B3A3D8 /* back.png in Resources */,
+				B6016A35135B3CF10086BF84 /* refresh.png in Resources */,
+				B6016A36135B3CF10086BF84 /* refresh@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,18 +10,20 @@
 #define kStartURL @"http://google.com"
 
 @interface DLWebViewController : UIViewController<UIWebViewDelegate, UITextFieldDelegate> {
-    IBOutlet UIWebView *webView;
-    IBOutlet UIButton *back;
-    IBOutlet UIButton *forward;    
-    IBOutlet UILabel *titleLabel;
-    IBOutlet UITextField *urlField;
-    IBOutlet UIBarButtonItem *edit;
+    UIWebView *webView;
+    UIButton *refresh;
+    UIButton *back;
+    UIButton *forward;    
+    UILabel *titleLabel;
+    UITextField *urlField;
+    UIBarButtonItem *edit;
     
     NSString *currentUrl;
     BOOL urlFieldVisible;
     BOOL wasUrlFieldVisible;
 }
 
+- (IBAction)refresh:(id)sender;
 - (IBAction)back:(id)sender;
 - (IBAction)forward:(id)sender;
 
@@ -30,6 +32,7 @@
 - (IBAction)showUrlField:(id)sender;
 
 @property (retain,nonatomic) UIWebView *webView;
+@property (retain,nonatomic) UIButton *refresh;
 @property (retain,nonatomic) UIButton *back;
 @property (retain,nonatomic) UIButton *forward;
 @property (retain,nonatomic) UILabel *titleLabel;
