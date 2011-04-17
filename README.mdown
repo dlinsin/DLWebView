@@ -16,8 +16,7 @@ The source consists of a single `UIViewController` subclass called `DLWebViewCon
 
 Check out the `DLWebViewDemo` project in XCode and how `DLWebViewController` is setup in `MainWindow.xib`. 
 
-<img src="http://dlinsin-downloads.s3-external-3.amazonaws.com/DLWebView.png" width="320" height="480"/>
-<img src="http://dlinsin-downloads.s3-external-3.amazonaws.com/DLWebView1.png" width="320" height="480"/>
+
 
 
 ## Issues and Feature Requests
