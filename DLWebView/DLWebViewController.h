@@ -16,7 +16,7 @@
     UIButton *forward;    
     UILabel *titleLabel;
     UITextField *urlField;
-    UIBarButtonItem *edit;
+    IBOutlet UIBarButtonItem *edit;
     
     NSString *currentUrl;
     BOOL urlFieldVisible;
