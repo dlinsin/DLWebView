@@ -175,7 +175,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.webView = [[[UIWebView alloc] initWithFrame:CGRectMake(0, 0, 320, 460)] autorelease];
+    self.webView = [[UIWebView alloc] initWithFrame:CGRectMake(0, 0, 320, 460)];
     self.webView.scalesPageToFit = YES;
     self.webView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleBottomMargin;
     self.webView.dataDetectorTypes = UIDataDetectorTypeAll;
@@ -197,12 +197,12 @@
     [self.forward setImage:[UIImage imageNamed:@"forward"] forState:UIControlStateNormal];
     [self.forward addTarget:self action:@selector(forward:) forControlEvents:UIControlEventTouchUpInside];
     
-    self.titleLabel = [[[UILabel alloc] initWithFrame:CGRectMake(0, 0, 150, 21)] autorelease];
+    self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 150, 21)];
     self.titleLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:14.0];
     self.titleLabel.textColor = [UIColor whiteColor];
     self.titleLabel.backgroundColor = [UIColor clearColor];
     
-    self.urlField = [[[UITextField alloc] initWithFrame:CGRectMake(0, 0, 242, 31)] autorelease];
+    self.urlField = [[UITextField alloc] initWithFrame:CGRectMake(0, 0, 242, 31)];
     self.urlField.font = [UIFont fontWithName:@"Helvetica" size:12.0];
     self.urlField.clearButtonMode = UITextFieldViewModeWhileEditing;
     self.urlField.returnKeyType = UIReturnKeyGo;
@@ -254,16 +254,5 @@
 }
 
 
-- (void)dealloc {
-    [webView release];
-    [refresh release];
-    [back release];
-    [forward release];
-    [titleLabel release];
-    [urlField release];
-    [edit release];
-    [currentUrl release];
-    [super dealloc];
-}
 
 @end

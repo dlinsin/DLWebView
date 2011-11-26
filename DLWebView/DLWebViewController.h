@@ -31,15 +31,15 @@
 
 - (IBAction)showUrlField:(id)sender;
 
-@property (retain,nonatomic) UIWebView *webView;
-@property (retain,nonatomic) UIButton *refresh;
-@property (retain,nonatomic) UIButton *back;
-@property (retain,nonatomic) UIButton *forward;
-@property (retain,nonatomic) UILabel *titleLabel;
-@property (retain,nonatomic) UITextField *urlField;
-@property (retain,nonatomic) UIBarButtonItem *edit;
+@property (strong,nonatomic) UIWebView *webView;
+@property (strong,nonatomic) UIButton *refresh;
+@property (strong,nonatomic) UIButton *back;
+@property (strong,nonatomic) UIButton *forward;
+@property (strong,nonatomic) UILabel *titleLabel;
+@property (strong,nonatomic) UITextField *urlField;
+@property (strong,nonatomic) UIBarButtonItem *edit;
 
-@property (retain,nonatomic) NSString *currentUrl;
+@property (strong,nonatomic) NSString *currentUrl;
 @property (nonatomic) BOOL urlFieldVisible;
 
 @end
