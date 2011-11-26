@@ -1,9 +1,14 @@
-//
-//  DLWebViewController.m
-//
-//  Created by David Linsin on 4/13/11.
-//  Copyright 2011 furryfishApps. All rights reserved.
-//
+/*
+
+    DLWebView
+    Copyright (C) 2011 David Linsin <dlinsin@gmail.com>
+
+    All rights reserved. This program and the accompanying materials
+    are made available under the terms of the Eclipse Public License v1.0
+    which accompanies this distribution, and is available at
+    http://www.eclipse.org/legal/epl-v10.html
+
+*/
 
 #import "DLWebViewController.h"
 
@@ -90,26 +95,26 @@
 
 #pragma mark - UIWebViewDelegate
 
-- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
+- (BOOL)webView:(UIWebView *)_webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
     self.currentUrl = [[request URL] absoluteString];
     NSString *theTitle = [[request URL] path];
     self.titleLabel.text = theTitle;
     return YES;
 }
 
-- (void)webViewDidStartLoad:(UIWebView *)webView {
+- (void)webViewDidStartLoad:(UIWebView *)_webView {
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
     [self buttonState];
 }
 
-- (void)webViewDidFinishLoad:(UIWebView *)webView {
+- (void)webViewDidFinishLoad:(UIWebView *)_webView {
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
     [self buttonState];
     NSString *theTitle=[self.webView stringByEvaluatingJavaScriptFromString:@"document.title"];
     self.titleLabel.text = theTitle;
 }
 
-- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
+- (void)webView:(UIWebView *)_webView didFailLoadWithError:(NSError *)error {
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
     [self buttonState];
 }
@@ -206,7 +211,7 @@
     self.urlField.font = [UIFont fontWithName:@"Helvetica" size:12.0];
     self.urlField.clearButtonMode = UITextFieldViewModeWhileEditing;
     self.urlField.returnKeyType = UIReturnKeyGo;
-    self.urlField.autocorrectionType = FALSE;
+    self.urlField.autocorrectionType = UITextAutocorrectionTypeNo;
     self.urlField.autocapitalizationType = UITextAutocapitalizationTypeNone;
     self.urlField.keyboardType = UIKeyboardTypeURL;
     self.urlField.borderStyle = UITextBorderStyleRoundedRect;
