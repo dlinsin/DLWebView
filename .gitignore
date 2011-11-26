@@ -3,3 +3,4 @@ DLWebViewDemo/build/*
 *.perspective*
 *.xcworkspace
 *xcuserdata
+*.idea*
