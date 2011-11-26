@@ -25,7 +25,11 @@ Check out the `DLWebViewDemo` project in XCode and how `DLWebViewController` is 
 
 Please report issues and feature requests via GitHub's issue tracker.
 
+## ARC
+
+There's an [ARC branch](https://github.com/dlinsin/DLWebView/tree/ARC) which you can use if your App uses the latest&greatest. It'll sooner or later find it's way into master.
+
 
 ## License
 
-Licensed under the Apache 2.0 license. You can use the code in your commercial and non-commercial projects.
+`DLWebView` is licensed under the Eclipse Public License.
